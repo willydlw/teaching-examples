@@ -67,7 +67,7 @@ where &theta; is the angle between the two vectors. The dot product may be compu
 
 <div align="center"> <strong>a</strong> . <strong>b</strong> = a<sub>x</sub>  b<sub>x</sub> + a<sub>y</sub> b<sub>y</sub></div></br></br>
 
-The value of the dot product is equivalent to the length of the projection of vector **a** onto the vector **b**, multiplied by the length of b. The projection of b onto produces the same scalar result. The dot product is commutative.
+The value of the dot product is equivalent to the length of the projection of vector **a** onto the vector **b**, multiplied by the length of b. The projection of b onto produces the same scalar result. The dot product is commutative.</br></br>
 
 ## Cross Product
 
