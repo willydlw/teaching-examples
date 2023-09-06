@@ -1,6 +1,8 @@
 #include <stdlib.h>
+#include <stdio.h>
 #include <time.h>
 #include "test.h"
+#include "sort.h"
 
 #define MAX_TESTS 100
 
@@ -10,6 +12,11 @@ int main(void)
 {
     srand(time(NULL));
     int numTests = rand() % MAX_TESTS + 1;
-    runTests(numTests);
+
+    printf("Running %d Insertion Sort tests\n", numTests);
+    runTests(insertionSort, numTests);
+
+    printf("\nRunning %d Selection Sort tests\n", numTests);
+    runTests(selectionSort, numTests);
     return 0;
 }

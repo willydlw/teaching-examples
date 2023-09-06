@@ -58,11 +58,11 @@ void randomOrderTest(void (*sortFunc)(int*, int), int n)
 
 
 // runs all tests
-void runTests(int numTests)
+void runTests(void (*sortFunc)(int*, int), int numTests)
 {
     {   // array of size 1
         int arr[1] = {0};
-        testSort(insertionSort, arr, 1);
+        testSort(sortFunc, arr, 1);
     }
 
     {   // small sorted array

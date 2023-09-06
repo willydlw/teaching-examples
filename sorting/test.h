@@ -33,7 +33,7 @@ void randomTest(int n);
 
 
 // Runs all tests
-void runTests(int numTests);
+void runTests(void (*sortFunc)(int*, int), int numTests);
 
 
 
