@@ -67,18 +67,18 @@ void runTests(void (*sortFunc)(int*, int), int numTests)
 
     {   // small sorted array
         int arr[2] = {1, 2};
-        testSort(insertionSort, arr, 2);
+        testSort(sortFunc, arr, 2);
     }
 
     {   // small unsorted array, negative values
         int arr[3] = {-1, -2, -3};
-        testSort(insertionSort, arr, 3);
+        testSort(sortFunc, arr, 3);
     }
 
 
     {   // small unsorted array
         int arr[3] = {3, 2, 1};
-        testSort(insertionSort, arr, 3);
+        testSort(sortFunc, arr, 3);
     }
 
     {   // random value tests
@@ -89,7 +89,7 @@ void runTests(void (*sortFunc)(int*, int), int numTests)
             int n = rand() % MAX_ARRAY_LENGTH;
             int arr[n];
             randomFill(arr, n);
-            testSort(insertionSort, arr, n);
+            testSort(sortFunc, arr, n);
             ++count;
         }
     }
@@ -99,7 +99,7 @@ void runTests(void (*sortFunc)(int*, int), int numTests)
         for(int i = 0; i < numTests; ++i)
         {
             int n = rand() % MAX_ARRAY_LENGTH;
-            randomOrderTest(insertionSort, n);
+            randomOrderTest(sortFunc, n);
         }
     }
 }
