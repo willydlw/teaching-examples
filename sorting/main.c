@@ -18,5 +18,8 @@ int main(void)
 
     printf("\nRunning %d Selection Sort tests\n", numTests);
     runTests(selectionSort, numTests);
+
+    printf("\nRunning %d Merge Sort tests\n", numTests);
+    runTests(mergeSort, numTests);
     return 0;
 }

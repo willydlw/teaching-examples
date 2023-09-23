@@ -2,6 +2,8 @@
 
 Insertion sort is a sorting algorithm that places an unsorted element at its suitable place in each iteration. 
 
+The algorithm uses an incremental method: for each array element A[i], insert it into its proper place in the subarray A[1:i], having already sorted the subarray A[1: i-1].
+
 ## Example
 
 Assume we want to sort the following array in increasing order.
