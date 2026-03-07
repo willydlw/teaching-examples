@@ -2,8 +2,6 @@
 
 #include <iostream>
 
-#define MENU_MIN 1
-#define MENU_MAX 3
 
 #define NOT_IMPLEMENTED \
     std::cerr << "NOT IMPLEMENTED: Function " << __func__ \
@@ -13,7 +11,26 @@
     std::cerr << "[TODO] File " << __FILE__ \
             << ", Line: " << __LINE__ << " - " #msg << "\n";
 
+
+#define MENU_ITEM_MIN 1 
+#define MENU_ITEM_MAX 6
+
+enum class MenuItem : int
+{
+    DEFAULT = 0,
+    SET_DIMENSIONS = 1,
+    GENERATE_MAZE = 2,
+    DISPLAY_MAZE = 3,
+    SAVE_MAZE = 4,
+    LOAD_MAZE = 5,
+    EXIT = 6
+};
+
 void clearScreen();
 void displayMenu();
-int getMenuChoice();
-int readIntFromKeyboard();
+int  getMenuChoice();
+void processMenuChoice(int choice);
+int  readIntFromKeyboard();
+
+
+void pressEnterKeyToContinue();

@@ -14,15 +14,19 @@ void clearScreen(void)
 void displayMenu(void)
 {
     std::string menu = R"(
-Maze Generation Menu
-    1. Choice 1 
-    2. Choice 2 
-    3. Quit
+Maze Generator
+    1. Set Dimensions
+    2. Generate New Maze
+    3. Display Maze 
+    4. Save Maze 
+    5. Load Maze
+    6. Exit
 
-Enter choice: )";
+Enter numeric option: )";
     std::cout << menu;
 
 }
+
 int getMenuChoice(void)
 {
     bool notValid = true;
@@ -31,13 +35,12 @@ int getMenuChoice(void)
     {
         displayMenu();
         choice = readIntFromKeyboard();
-        if(choice >= MENU_MIN && choice <= MENU_MAX){
+        if(choice >= MENU_ITEM_MIN && choice <= MENU_ITEM_MAX){
             notValid = false;
         }
         else{
             std::cout << "\nNumber " << choice << " is not a recognized menu option.\n";
-            std::cout << "Press enter key to continue ...";
-            std::getchar();
+            pressEnterKeyToContinue();
             clearScreen();
         }
     }
@@ -61,5 +64,40 @@ int readIntFromKeyboard()
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
    
     return number;
+}
+
+void pressEnterKeyToContinue()
+{
+    std::cout << "Press enter key to continue ...";
+    std::getchar();
+}
+
+
+void processMenuChoice(int choice)
+{
+    switch(static_cast<MenuItem>(choice)){
+        case MenuItem::SET_DIMENSIONS:
+            TODO("Set Maze Dimensions");
+        break;
+        case MenuItem::GENERATE_MAZE:
+            TODO("Generate Maze");
+        break;
+        case MenuItem::DISPLAY_MAZE:
+            TODO("Display maze";)
+        break;
+        case MenuItem::SAVE_MAZE:
+            TODO("Save maze");
+        break;
+        case MenuItem::LOAD_MAZE:
+            TODO("Load maze");
+        break;
+        case MenuItem::EXIT:
+            return;
+        default:
+            std::cerr << "\n[ERROR] func: " << __func__ << ", unknown choice: " << choice << "\n";
+            pressEnterKeyToContinue();
+    }
+    pressEnterKeyToContinue();
+    clearScreen();
 }
 
